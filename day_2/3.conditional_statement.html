@@ -1,0 +1,47 @@
+<html>
+  <script>
+
+    // EX 1.
+
+    var hargaBarang = 10000
+    var qty = 2
+
+    var totalHarga = hargaBarang * qty
+    var totalBayar = totalHarga;
+
+    if (totalHarga > 10000) {
+
+      var hargaSetelahDiskon = totalBayar - 2000
+
+      // re assign
+      totalBayar = hargaSetelahDiskon
+    }
+
+    console.log('total harga = ', totalHarga)
+    console.log('Anda harus bayar = ', totalBayar)
+
+
+    // kasih diskon 2000 kalau totalHarga > 10000
+
+  </script>
+</html>
+
+<!--
+  Conditional statement
+    1. Ketika kita pengin kode kita jalan di
+    kondisi tertentu
+    2. Ketika kondisi "true", maka kode di jalanin
+    3. Syntax
+
+    if(conditions) {
+      // action
+    }
+
+    if (true) {
+      jalan
+    }
+
+    if (false) {
+      gak jalan
+    }
+ -->
