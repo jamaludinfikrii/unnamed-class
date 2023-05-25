@@ -1,0 +1,66 @@
+<html>
+  <script>
+    // window.alert('Contoh alert')
+    // window.confirm('contoh confirm')
+    // window.prompt('contoh prompt')
+
+
+    // var hasilPrompt = window.prompt("Bebas")
+    // console.log(hasilPrompt)
+
+
+    // ex apps 1
+    // var nilai = window.prompt("Berapa nilai ujian anda !!")
+
+    // if (nilai > 70) {
+    //   window.alert("ANDA LULUS")
+    // } else {
+    //   window.alert("ANDA TIDAK LULUS :( ")
+    // }
+
+
+    // ex apps 2
+    var namaBarang = window.prompt("Belanja apa?")
+    var hargaBarang = window.prompt("Berapa harganya?")
+    var qty = window.prompt("Berapa banyak belinya?")
+
+    var totalHarga = hargaBarang * qty
+
+    window.alert("Belanja " + namaBarang + " sebanyak " + qty + ", total belanja = " + totalHarga)
+
+
+    // apps 2, dikasih kondisi diskon
+    // kalau total harga > 100000, diskonnya 10%
+    // kalau total harga > 200000, diskonnya 20%
+
+
+    // apps 3, aplikasi parkir sederhana
+    // input nya,
+      // motor atau mobil?
+      // berapa jam parkirnya?
+
+    // resultnya
+      // anda parkir motor 10 jam, total bayar 19.000
+      // anda parkir mobil 5 jam, total bayar 16.000
+
+    // rumus hitung total bayar
+      // motor, 1 jam pertama 1000, jam selanjutnya 2000 /jam
+      // mobil, 1 jam pertama 4000, jam selanjutnya 3000 /jam
+
+
+
+  </script>
+</html>
+
+<!--
+
+  syntax browser
+    window.alert
+      munculin alert sederhana
+    window.confirm
+      munculin confirmasi, hasilnya boolean
+    window.prompt
+      munlin inputn user, hasilnya string
+
+
+ -->
