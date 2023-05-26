@@ -4,51 +4,95 @@
     // window.confirm('contoh confirm')
     // window.prompt('contoh prompt')
 
-
     // var hasilPrompt = window.prompt("Bebas")
     // console.log(hasilPrompt)
 
-
     // ex apps 1
-    // var nilai = window.prompt("Berapa nilai ujian anda !!")
+    // var nilai = window.prompt("Berapa nilai ujian anda !!");
 
-    // if (nilai > 70) {
-    //   window.alert("ANDA LULUS")
+    // console.log(nilai); // apapun yang di input user // type data ?? string
+    // nilai = Number(nilai);
+
+    // if (isNaN(nilai)) {
+    //   alert("Input number boss!! jangan character !!");
     // } else {
-    //   window.alert("ANDA TIDAK LULUS :( ")
+    //   if (nilai > 70) {
+    //     window.alert("ANDA LULUS");
+    //   } else {
+    //     window.alert("ANDA TIDAK LULUS :( ");
+    //   }
     // }
-
 
     // ex apps 2
     var namaBarang = window.prompt("Belanja apa?")
+    if (namaBarang === '') {
+      alert("Nama barang kosong")
+      throw Error()
+    }
+
+    // a isNaN(a) == true | a bukan number
+    // a isNaN(a) == false | a number
+
+    var namaBarangNum = Number(namaBarang)
+    if (isNaN(namaBarangNum) === false) {
+      alert("Nama barang gak boleh number")
+      throw Error()
+    }
+
     var hargaBarang = window.prompt("Berapa harganya?")
+    if (hargaBarang === '') {
+      alert("Harga barang kosong")
+      throw Error()
+    }
+
+    var hargaBarangNum = Number(hargaBarang)
+    if (isNaN(hargaBarangNum) === true) {
+      alert("Harga barang harus angka!!")
+      throw Error()
+    }
+
     var qty = window.prompt("Berapa banyak belinya?")
+    if (qty === '') {
+      alert("Qty kosong, ERROR !!")
+      throw Error()
+    }
+
+    var qtyNum = Number(qty)
+    if (isNaN(qtyNum)) {
+      alert("QTY harus angka!!")
+      throw Error()
+    }
 
     var totalHarga = hargaBarang * qty
 
-    window.alert("Belanja " + namaBarang + " sebanyak " + qty + ", total belanja = " + totalHarga)
+    // window.alert("Belanja " + namaBarang + " sebanyak " + qty + ", total belanja = " + totalHarga)
+    window.alert(`Belanja ${namaBarang} sebanyak ${qty}, total belanja = ${totalHarga}`)
+
+
+
+
+
+
+
+
 
 
     // apps 2, dikasih kondisi diskon
     // kalau total harga > 100000, diskonnya 10%
     // kalau total harga > 200000, diskonnya 20%
 
-
     // apps 3, aplikasi parkir sederhana
     // input nya,
-      // motor atau mobil?
-      // berapa jam parkirnya?
+    // motor atau mobil?
+    // berapa jam parkirnya?
 
     // resultnya
-      // anda parkir motor 10 jam, total bayar 19.000
-      // anda parkir mobil 5 jam, total bayar 16.000
+    // anda parkir motor 10 jam, total bayar 19.000
+    // anda parkir mobil 5 jam, total bayar 16.000
 
     // rumus hitung total bayar
-      // motor, 1 jam pertama 1000, jam selanjutnya 2000 /jam
-      // mobil, 1 jam pertama 4000, jam selanjutnya 3000 /jam
-
-
-
+    // motor, 1 jam pertama 1000, jam selanjutnya 2000 /jam
+    // mobil, 1 jam pertama 4000, jam selanjutnya 3000 /jam
   </script>
 </html>
 

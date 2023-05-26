@@ -6,19 +6,19 @@
     var hargaBarang = 10000
     var qty = 2
 
-    var totalHarga = hargaBarang * qty
-    var totalBayar = totalHarga;
+    var totalHarga = hargaBarang * qty // 20000
+    var totalBayar = totalHarga; // 20000
 
-    if (totalHarga > 10000) {
+    if (totalHarga > 10000) { // true
 
-      var hargaSetelahDiskon = totalBayar - 2000
+      var hargaSetelahDiskon = totalBayar - 2000 // 20000 - 2000
 
       // re assign
-      totalBayar = hargaSetelahDiskon
+      totalBayar = hargaSetelahDiskon // 18000
     }
 
-    console.log('total harga = ', totalHarga)
-    console.log('Anda harus bayar = ', totalBayar)
+    console.log('total harga = ', totalHarga) // 20000
+    console.log('Anda harus bayar = ', totalBayar) // 18000
 
 
     // kasih diskon 2000 kalau totalHarga > 10000
