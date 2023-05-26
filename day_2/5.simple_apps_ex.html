@@ -67,15 +67,36 @@
       throw Error()
     }
 
-    var totalHarga = hargaBarang * qty
+    var totalHarga = hargaBarang * qty; // 150000
+
+    var hargaSetelahDiskon;
+    var isDapatDiskon;
+
+    if (totalHarga > 200000) {
+      isDapatDiskon = true
+      hargaSetelahDiskon = totalHarga - (totalHarga * 0.2)
+    } else if (totalHarga > 100000) {
+      isDapatDiskon = true
+      hargaSetelahDiskon = totalHarga - (totalHarga * 0.1)
+    } else {
+      isDapatDiskon = false
+      hargaSetelahDiskon = totalHarga
+    }
+
 
     // window.alert("Belanja " + namaBarang + " sebanyak " + qty + ", total belanja = " + totalHarga)
-    window.alert(`Belanja ${namaBarang} sebanyak ${qty}, total belanja = ${totalHarga}`)
 
+    var kwitansi = `Belanja ${namaBarang} sebanyak ${qty}, total belanja = ${totalHarga}`
 
-
-
-
+    if (isDapatDiskon) {
+      kwitansi = `
+      Horeeee !! Anda dapet diskon
+      --------
+      Belanja ${namaBarang} sebanyak ${qty}, total belanja = ${totalHarga}
+      Harga setelah diskon = ${hargaSetelahDiskon}
+      `
+    }
+    window.alert(kwitansi)
 
 
 
