@@ -1,0 +1,38 @@
+<html>
+  <!--
+    Operator
+    - Comparison, menghasilkan boolean
+      - ===, >= , <=, !==
+      - 10 > 7 = true
+    - Aritmatika, menghasilkan number
+      - + , *, /
+      - 10 % 3 = 1
+    - Logical operator.
+      - && , ||, !
+
+      - kalau pake &&, kanan kiri harus true, baru resultnya true
+      ex.
+      (10 > 7 && 10 > 6) // true
+      (10 > 7 && 10 > 11) // false
+
+      - kalau pake ||, salah satu true, maka resultnya true
+      ex.
+      (10 > 7 || 10 > 6) // true
+      (10 > 7 || 10 > 11) // true
+      (10 == 7 || 10 == 11) // false
+
+      - !
+      (!(10 > 7)) // false
+   -->
+  <script>
+    var inputNama = window.prompt("Masukan nama temenmu yang punya 5 huruf");
+    var namaLenght = inputNama.length;
+
+    if (!(namaLenght === 5)) {
+      window.alert("tidak sesuai");
+      throw Error();
+    } else {
+      window.alert("Halo  " + inputNama);
+    }
+  </script>
+</html>
