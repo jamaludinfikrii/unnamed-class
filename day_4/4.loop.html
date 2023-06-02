@@ -1,0 +1,48 @@
+<html>
+
+  <!--
+    Looping Vs Pengkondisian
+
+    pengkondisian
+    if (condition) {
+      action
+    }
+
+    looping
+    while(condition){
+      action
+    }
+
+    - pengkondisian jalan sekali
+    - looping bakalan jalan terus selama kondisi masih true
+      - makanyaa, harus bisa bikin condisi false, biar gak infinite loop
+      - escape condition, biar bisa keluar dari looping
+
+   -->
+  <script>
+    // var angka = 10
+    // var counter = 0;
+    // while (angka > 5) {
+    //   console.log("Anda lulus")
+    //   console.log(counter)
+    //   counter = counter + 1
+    //   if (counter === 3) {
+    //     break;
+    //   }
+    // }
+
+    var isCobaLagi = true;
+
+    while (isCobaLagi) {
+      var inputNama = window.prompt("Masukan namamu, harus 5 huruf !");
+      var inputNamaLength = inputNama.length;
+
+      if (inputNamaLength === 5) {
+        isCobaLagi = false;
+        alert("halo " + inputNama);
+      } else {
+        alert("input nama harus 5 angka !!");
+      }
+    }
+  </script>
+</html>
