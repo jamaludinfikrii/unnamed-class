@@ -18,6 +18,24 @@
       - makanyaa, harus bisa bikin condisi false, biar gak infinite loop
       - escape condition, biar bisa keluar dari looping
 
+
+    - Di javascript, looping ada 3 cara
+      - while
+      while(condition){
+        action
+      }
+
+      - do while
+      do {
+        action
+      } while (condition)
+
+      - for loops
+      for(init var; condition; last action) {
+        action
+      }
+
+
    -->
   <script>
     // var angka = 10
@@ -31,18 +49,63 @@
     //   }
     // }
 
-    var isCobaLagi = true;
+    // var isCobaLagi = true;
 
-    while (isCobaLagi) {
-      var inputNama = window.prompt("Masukan namamu, harus 5 huruf !");
-      var inputNamaLength = inputNama.length;
+    // while (isCobaLagi) {
+    //   var inputNama = window.prompt("Masukan namamu, harus 5 huruf !");
+    //   var inputNamaLength = inputNama.length;
 
-      if (inputNamaLength === 5) {
-        isCobaLagi = false;
-        alert("halo " + inputNama);
-      } else {
-        alert("input nama harus 5 angka !!");
-      }
-    }
+    //   if (inputNamaLength === 5) {
+    //     isCobaLagi = false;
+    //     alert("halo " + inputNama);
+    //   } else {
+    //     alert("input nama harus 5 angka !!");
+    //   }
+    // }
+
+
+
+    // ===================================
+
+    // do while vs while
+
+    // var angka = 2
+    // var counter = 0;
+    // while (angka > 5) {
+    //   console.log("Anda lulus")
+    //   console.log(counter)
+    //   counter = counter + 1
+    //   if (counter === 3) {
+    //     break;
+    //   }
+    // }
+
+    // var angka = 2
+    // var counter = 0;
+    // do {
+    //   console.log("Anda lulus")
+    //   console.log(counter)
+    //   counter = counter + 1
+    //   if (counter === 3) {
+    //     break;
+    //   }
+    // } while (angka > 5)
+
+    // var isCobaLagi = true;
+
+    // do {
+    //   var inputNama = window.prompt("Masukan namamu, harus 5 huruf !");
+    //   var inputNamaLength = inputNama.length;
+
+    //   if (inputNamaLength === 5) {
+    //     isCobaLagi = false;
+    //     alert("halo " + inputNama);
+    //   } else {
+    //     alert("input nama harus 5 angka !!");
+    //   }
+    // } while (isCobaLagi)
+
+
+
   </script>
 </html>
