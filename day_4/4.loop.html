@@ -1,5 +1,4 @@
 <html>
-
   <!--
     Looping Vs Pengkondisian
 
@@ -17,7 +16,7 @@
     - looping bakalan jalan terus selama kondisi masih true
       - makanyaa, harus bisa bikin condisi false, biar gak infinite loop
       - escape condition, biar bisa keluar dari looping
-
+    - untuk menghentikan looping, bisa pake break, bisa juga kita men false kan kondisi
 
     - Di javascript, looping ada 3 cara
       - while
@@ -63,8 +62,6 @@
     //   }
     // }
 
-
-
     // ===================================
 
     // do while vs while
@@ -105,7 +102,39 @@
     //   }
     // } while (isCobaLagi)
 
+    // ======================================
 
+    // for loops
+
+    // for(init var; condition; last action every loop) {
+    //   action
+    // }
+
+    for (var counter = 0; counter <= 5; counter = counter + 1) {
+      console.log("counter ke -" + counter);
+    }
+
+    // pertama bikin variable counter nilainya 0
+    // cek kondisi, kalau true jalan
+    // jalanin action, console.log("counter ke -" + 0);
+    // jalanin last action every loop, counter +1, counter = 1
+    // cek kondisi, kalau true jalan
+    // jalanin action, console.log("counter ke -" + 1);
+    // jalanin last action every loop, counter +1, counter = 2
+    // cek kondisi, kalau true jalan
+    // jalanin action, console.log("counter ke -" + 2);
+    // jalanin last action every loop, counter +1, counter = 3
+    // cek kondisi, kalau true jalan
+    // jalanin action, console.log("counter ke -" + 3);
+    // jalanin last action every loop, counter +1, counter = 4
+    // cek kondisi, kalau true jalan
+    // jalanin action, console.log("counter ke -" + 4);
+    // jalanin last action every loop, counter +1, counter = 5
+    // cek kondisi, kalau true jalan,
+    // jalanin action,  console.log("counter ke -" + 5);
+    // jalanin last action every loop, counter +1, counter = 6
+    // cek kondisi, kalau true jalan,
+    // false, maka loops berakhir
 
   </script>
 </html>
