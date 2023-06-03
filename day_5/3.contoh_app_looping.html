@@ -1,0 +1,69 @@
+<html>
+  <!--
+
+    1. input user, sebutkan namamu? kanzun
+    2. input user, mau cari huruf apa? z
+
+    1. output, huruf z dalam kanzun ada 1 huruf
+
+
+    var counter = 1;
+    kanzun
+   -->
+  <script>
+    // var nama = "fikri"
+
+    // var pointer = 0; // 1
+    // while(pointer < 5) {
+    //   console.log(nama.charAt(pointer)) // nama.charAt(1) == i
+    //   pointer = pointer + 1
+    // }
+
+    var nama = "kanzun bairuha";
+    var hurufYangDicari = "a";
+    var jumlahHurufYangDicari = 0;
+
+    // cara ngecek huruf di dalam kata, itu bisa pake looping
+    // bisa pake method namanya charAt(position)
+
+    // if (nama.charAt(0) === hurufYangDicari) {
+    //   jumlahHurufYangDicari = jumlahHurufYangDicari + 1;
+    // }
+
+    // if (nama.charAt(1) === hurufYangDicari) {
+    //   jumlahHurufYangDicari = jumlahHurufYangDicari + 1;
+    // }
+
+    // if (nama.charAt(2) === hurufYangDicari) {
+    //   jumlahHurufYangDicari = jumlahHurufYangDicari + 1;
+    // }
+    // if (nama.charAt(3) === hurufYangDicari) {
+    //   jumlahHurufYangDicari = jumlahHurufYangDicari + 1;
+    // }
+
+    // if (nama.charAt(4) === hurufYangDicari) {
+    //   jumlahHurufYangDicari = jumlahHurufYangDicari + 1;
+    // }
+
+    // if (nama.charAt(5) === hurufYangDicari) {
+    //   jumlahHurufYangDicari = jumlahHurufYangDicari + 1;
+    // }
+
+    // if (nama.charAt(6) === hurufYangDicari) {
+    //   jumlahHurufYangDicari = jumlahHurufYangDicari + 1;
+    // }
+
+    var pointer = 0;
+    while (pointer < nama.length) {
+      if (nama.charAt(pointer) === hurufYangDicari) {
+        jumlahHurufYangDicari = jumlahHurufYangDicari + 1;
+      }
+
+      pointer = pointer + 1;
+    }
+
+    console.log(
+      `huruf ${hurufYangDicari} dalam nama ${nama} ada ${jumlahHurufYangDicari}`
+    );
+  </script>
+</html>
