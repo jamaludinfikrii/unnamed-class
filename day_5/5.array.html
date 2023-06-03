@@ -1,0 +1,50 @@
+<html>
+  <!--
+  Array:
+
+  - array itu wadah juga,cuman bisa nyimpen lebih dari satu data
+  - beda dengan variable biasa.
+  - index dimulai dari nol (0)
+  - pake kurung [ ]
+  - kita mesti tau gimana cara akses, delete, dan ubah, atau nambahin
+  - CRUD (create, read, update, delete)
+ -->
+
+  <script>
+    var hari1 = "senin";
+    var hari2 = "selasa";
+    var hari3 = "rabu";
+
+    var hari = ["senin", "selasa", "rabu"];
+    console.log(hari[1]);
+    console.log(hari[2]);
+
+    // masukin data ke array
+    hari.push("kamis");
+    console.log(hari);
+
+    // delete data terakhir
+    hari.pop();
+    console.log(hari);
+
+    // delete data pertama
+    hari.shift();
+    console.log(hari);
+
+    var bulan = ["januari", "feb", "mar", "apr"];
+
+    // delete index ke 1, satu data
+    bulan.splice(1, 1);
+    console.log(bulan);
+
+    var daerah = ["bms", "jkt", "bdg", "sby"];
+    // delete mulai dari index ke 1, sampe 3 ke belakang
+    daerah.splice(1, 3);
+    console.log(daerah);
+
+    // update specific data
+    var names = ["fikri", "kanzun", "budi"];
+    names[1] = "susi";
+    console.log(names)
+  </script>
+</html>
