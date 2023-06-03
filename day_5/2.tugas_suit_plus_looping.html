@@ -1,0 +1,88 @@
+<html>
+  <script>
+    // bikin prompt terus, selama user belum masukin input yang bener
+
+    // var isInputValid = false;
+    // do {
+    //   var inputUser = window.prompt("Pilih, batu, kertas atau gunting?");
+    //   var inputUserConverted = inputUser.toLowerCase();
+
+    //   if (
+    //     inputUserConverted === "batu" ||
+    //     inputUserConverted === "kertas" ||
+    //     inputUserConverted === "gunting"
+    //   ) {
+    //     isInputValid = true;
+    //   } else {
+    //     alert("Input invalid !!");
+    //   }
+    // } while (isInputValid === false);
+
+
+    do {
+      var inputUser = window.prompt("Pilih, batu, kertas atau gunting?");
+      var inputUserConverted = inputUser.toLowerCase();
+
+      if (
+        inputUserConverted === "batu" ||
+        inputUserConverted === "kertas" ||
+        inputUserConverted === "gunting"
+      ) {
+        break;
+      } else {
+        alert("Input invalid !!");
+      }
+    } while (true);
+
+    // if (
+    //   inputUser !== "batu" &&
+    //   inputUser !== "kertas" &&
+    //   inputUser !== "gunting"
+    // ) {
+    //   window.alert(
+    //     "Pilihan tidak valid, silahkan pilih batu, kertas atau gunting"
+    //   );
+    //   throw Error();
+    // }
+
+    var inputComputer = Math.random();
+    var computerConverted;
+
+    if (inputComputer > 0 && inputComputer <= 0.9) {
+      computerConverted = "batu";
+    } else if (inputComputer > 0.9 && inputComputer <= 0.92) {
+      computerConverted = "kertas";
+    } else if (inputComputer > 0.92 && inputComputer <= 1) {
+      computerConverted = "gunting";
+    }
+
+    var result;
+
+    if (inputUserConverted === computerConverted) {
+      result = "Seri";
+    } else if (inputUserConverted === "batu") {
+      if (computerConverted === "kertas") {
+        result = "Kalah";
+      } else if (computerConverted === "gunting") {
+        result = "Menang";
+      }
+    } else if (inputUserConverted === "kertas") {
+      if (computerConverted === "gunting") {
+        result = "Kalah";
+      } else if (computerConverted === "batu") {
+        result = "Menang";
+      }
+    } else if (inputUserConverted === "gunting") {
+      if (computerConverted === "batu") {
+        result = "Kalah";
+      } else if (computerConverted === "kertas") {
+        result = "Menang";
+      }
+    }
+
+    window.alert(`
+    Kamu memilih ${inputUserConverted}, komputer memilih ${computerConverted}
+    Hasilnya adalah ${result}
+    `);
+  </script>
+</html>
