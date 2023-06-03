@@ -1,0 +1,57 @@
+<html>
+  <script>
+    do {
+      window.alert("Aplikasi penghitung huruf !!");
+      do {
+        var inputName = window.prompt("Masukan nama kamu");
+        var inputNameNum = Number(inputName);
+        if (isNaN(inputNameNum)) {
+          break;
+        } else {
+          alert("inputan harus huruf");
+        }
+      } while (true);
+
+      do {
+        var hurufYangDicari = window.prompt("Masukan huruf yang dicari");
+        var hurufYangDicariNum = Number(hurufYangDicari);
+        // kita break, kalau huruf yang di cari string, dan hanya satu huruf
+        if (isNaN(hurufYangDicariNum) && hurufYangDicari.length === 1) {
+          break
+        } else {
+          alert("huruf harus satu character dan tidak boleh angka !!")
+        }
+      } while (true);
+
+      var jumlahHurufYangDicari = 0;
+      var pointer = 0;
+
+      // ini tandanya kurang dari <. huruf terakhir bisa ikut??
+      // jadi, charAt di mulai dari nol (0)
+
+      // misal ada string fikri
+      // string.charAt(4) i
+      inputName = inputName.toLowerCase()
+      hurufYangDicari = hurufYangDicari.toLowerCase()
+      while (pointer < inputName.length) {
+        var huruf = inputName.charAt(pointer);
+        if (huruf === hurufYangDicari) {
+          jumlahHurufYangDicari++;
+        }
+
+        pointer++; // escape condition
+      }
+
+      alert(
+        `huruf ${hurufYangDicari} di dalam nama ${inputName} ada ${jumlahHurufYangDicari} huruf`
+      );
+
+      var isUserTryAgain = window.confirm('Coba lagi??')
+      if(isUserTryAgain === false) {
+        alert("terimakasih !!")
+        break;
+      }
+    } while(true);
+
+  </script>
+</html>
