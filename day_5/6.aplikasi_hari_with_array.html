@@ -1,0 +1,57 @@
+<!--
+  Apps 2
+  Aplikasi penghitung hari.
+
+  Input user,
+    Sekarang hari apa? (senin, selasa, rabu, kamis, jumat, sabtu, minggu)
+    Mau maju berapa hari? (misal 100)
+  hasil
+    Sekarang hari x, 100 hari setelah hari x adalah hari y
+ -->
+
+<html>
+  <!--
+    user input hari senin,
+      covert hari senin menjadi 1
+    user input maju berapa hari? 10
+      modulo 10 dengan 7, hasilnya 3
+
+    hasil hari maju 1 + 3 = 4
+    hasil hari maju 4 % 7 = 4
+
+    4 convert menjadi kamis
+   -->
+
+  <script>
+    var hariArr = ["senin", "selasa", "rabu", "kamis", "jumat", "sabtu", "minggu"];
+    var jumlahHari = hariArr.length
+
+    do {
+      var inputHari = prompt("Sekarang hari apa?");
+      inputHari.toLowerCase()
+      if (hariArr.includes(inputHari)) {
+        break;
+      }
+    } while (true);
+
+    do {
+      var hariTambah = prompt("Mau maju berapa hari?");
+      var hariTambahNum = Number(hariTambah);
+      if (hariTambah !== '' && isNaN(hariTambahNum) === false) {
+        break;
+      }
+    } while(true)
+
+    var sisaHari = hariTambahNum % jumlahHari // 3
+    var inputHariConverted = hariArr.indexOf(inputHari) + 1 // 6
+    var resultHari = sisaHari + inputHariConverted // 9
+    resultHari = resultHari % jumlahHari - 1 // 1
+    var resultHariName = hariArr[resultHari] // selasa
+
+    window.alert(`
+    Hari ini adalah hari ${inputHari},
+    ${hariTambahNum} hari dari ${inputHari} adalah hari ${resultHariName}
+    `);
+
+  </script>
+</html>
