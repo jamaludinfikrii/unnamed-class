@@ -1,0 +1,75 @@
+
+
+
+<!--
+  APLIKASI KASIR
+
+  input
+    - prompt
+    belanja apa
+    1. apel harga 10000
+    2. jeruk harga 30000
+    3. lemon harga 25000
+
+    - prompt
+    belanja apel berapa buah? 10
+
+    - alert belanja apel 10 buah, total 100000
+
+
+    TUGAS
+    - tetep pake aplikasi ini, lanjutin
+
+    1.
+    - prompt mau belanja apa dan qty, itu nge prompt terus sampe user belum exit.
+    - ketika user exit, munculin barang apa aja yang dibeli dan qty nya berapa. total belanja juga dimunculin.
+
+    2.
+    - ketika user input barang yang sama.
+    - qty nya bakal bertambah.
+
+-->
+
+<html>
+  <script>
+
+    var barangs = ['apel','jeruk','lemon','ayam','bebek','ikan','nasi','rendang']
+    var hargaBarangs = [10000,30000,25000,40000,50000,25000,12000,27000]
+    var totalJenisBarang = barangs.length
+
+    // var keranjangs = [1,0]
+    // var qtyKeranjang = [10,5]
+
+    var promptText1 = `
+    MAU BELANJA APA??
+    =============\n\n`
+
+    var i = 0;
+    while(i < totalJenisBarang) {
+      promptText1 += `${i+1}. ${barangs[i]}, Rp.${hargaBarangs[i]}\n`
+      i++
+    }
+
+    promptText1 += `
+    ${totalJenisBarang+1}. exit
+    `
+
+    promptText1 += `
+    =============
+    Silahkan pilih angka !
+    `
+
+    var inputBarangUser = window.prompt(promptText1)
+
+    var pilihanBarang = barangs[inputBarangUser-1];
+    var hargaBarang = hargaBarangs[inputBarangUser-1];
+
+    var qtyBelanja = prompt(`Belanja ${pilihanBarang} berapa buah?`)
+    var totalBelanja = Number(qtyBelanja) * hargaBarang
+
+    window.alert(`
+    anda belanja ${pilihanBarang} sebanyak ${qtyBelanja}, total Rp.${totalBelanja}
+    `)
+
+  </script>
+</html>

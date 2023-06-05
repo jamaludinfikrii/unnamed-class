@@ -1,0 +1,88 @@
+
+
+
+<!--
+  APLIKASI KASIR
+
+  input
+    - prompt
+    belanja apa
+    1. apel harga 10000
+    2. jeruk harga 30000
+    3. lemon harga 25000
+
+    - prompt
+    belanja apel berapa buah? 10
+
+    - alert belanja apel 10 buah, total 100000
+-->
+
+<html>
+  <script>
+    var barang1 = 'apel'
+    var hargaBarang1 = 10000
+
+    var barang2 = 'jeruk'
+    var hargaBarang2 = 30000
+
+    var barang3 = 'lemon'
+    var hargaBarang3 = 25000
+
+    var barang4 = 'ayam'
+    var hargaBarang4 = 40000
+
+    var barang5 = 'bebek'
+    var hargaBarang5 = 50000
+
+    var barang6 = 'ikan'
+    var hargaBarang6 = 25000
+
+    var inputBarangUser = prompt(`
+    MAU BELANJA APA??
+    =============
+    1. ${barang1}, Rp. ${hargaBarang1}
+    2. ${barang2}, Rp. ${hargaBarang2}
+    3. ${barang3}, Rp. ${hargaBarang3}
+    4. ${barang4}, Rp. ${hargaBarang4}
+    5. ${barang5}, Rp. ${hargaBarang5}
+    6. ${barang6}, Rp. ${hargaBarang6}
+    =============
+    Masukan nomor barang yang mau dibeli
+    `)
+
+    var pilihanBarang;
+    var hargaBarang;
+
+    if(inputBarangUser === '1') {
+      pilihanBarang = barang1
+      hargaBarang = hargaBarang1
+    } else if(inputBarangUser === '2') {
+      pilihanBarang = barang2
+      hargaBarang = hargaBarang2
+    } else if (inputBarangUser === '3') {
+      pilihanBarang = barang3
+      hargaBarang = hargaBarang3
+    } else if (inputBarangUser === '4') {
+      pilihanBarang = barang4
+      hargaBarang = hargaBarang4
+    } else if (inputBarangUser === '5') {
+      pilihanBarang = barang5
+      hargaBarang = hargaBarang5
+    } else if (inputBarangUser === '6') {
+      pilihanBarang = barang6
+      hargaBarang = hargaBarang6
+    } else {
+      alert("salah input")
+      throw Error()
+    }
+
+    var qtyBelanja = prompt(`Belanja ${pilihanBarang} berapa buah?`)
+    var totalBelanja = Number(qtyBelanja) * hargaBarang
+
+    window.alert(`
+    anda belanja ${pilihanBarang} sebanyak ${qtyBelanja}, total Rp.${totalBelanja}
+    `)
+
+
+  </script>
+</html>
