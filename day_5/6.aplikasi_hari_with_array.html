@@ -27,7 +27,7 @@
     var jumlahHari = hariArr.length
 
     do {
-      var inputHari = prompt("Sekarang hari apa?");
+      var inputHari = prompt("Sekarang hari apa?"); // senin
       inputHari.toLowerCase()
       if (hariArr.includes(inputHari)) {
         break;
@@ -35,18 +35,25 @@
     } while (true);
 
     do {
-      var hariTambah = prompt("Mau maju berapa hari?");
+      var hariTambah = prompt("Mau maju berapa hari?"); // 6
       var hariTambahNum = Number(hariTambah);
       if (hariTambah !== '' && isNaN(hariTambahNum) === false) {
         break;
       }
     } while(true)
 
-    var sisaHari = hariTambahNum % jumlahHari // 3
-    var inputHariConverted = hariArr.indexOf(inputHari) + 1 // 6
-    var resultHari = sisaHari + inputHariConverted // 9
-    resultHari = resultHari % jumlahHari - 1 // 1
-    var resultHariName = hariArr[resultHari] // selasa
+    var sisaHari = hariTambahNum % jumlahHari // 6 % 7 = 6
+    var inputHariConverted = hariArr.indexOf(inputHari) + 1 // 1
+    var resultHari = sisaHari + inputHariConverted // 7
+
+    if (resultHari === jumlahHari) {
+      resultHari = resultHari - 1
+    } else {
+      resultHari = resultHari % jumlahHari - 1
+    }
+
+
+    var resultHariName = hariArr[resultHari]
 
     window.alert(`
     Hari ini adalah hari ${inputHari},
