@@ -1,0 +1,95 @@
+
+
+
+<!--
+  APLIKASI KASIR
+
+  input
+    - prompt
+    belanja apa
+    1. apel harga 10000
+    2. jeruk harga 30000
+    3. lemon harga 25000
+
+    - prompt
+    belanja apel berapa buah? 10
+
+    - alert belanja apel 10 buah, total 100000
+
+
+    TUGAS
+    - tetep pake aplikasi ini, lanjutin
+
+    1.
+    - prompt mau belanja apa dan qty, itu nge prompt terus sampe user belum exit.
+    - ketika user exit, munculin barang apa aja yang dibeli dan qty nya berapa. total belanja juga dimunculin.
+
+    2.
+    - ketika user input barang yang sama.
+    - qty nya bakal bertambah.
+
+-->
+
+<html>
+  <script>
+    var barangs = ['apel','jeruk','lemon','ayam','bebek','ikan','nasi','rendang']
+    var hargaBarangs = [10000,30000,25000,40000,50000,25000,12000,27000]
+    var totalJenisBarang = barangs.length
+    var userTrx = []
+    var userTrxQty = []
+    var trxPrice = []
+
+    do {
+      var promptText1 = `MAU BELANJA APA??\n=============\n\n`
+
+      var i = 0;
+      while(i < totalJenisBarang) {
+        promptText1 += `${i+1}. ${barangs[i]}, Rp.${hargaBarangs[i]}\n`
+        i++
+      }
+
+      promptText1 += `${totalJenisBarang+1}. exit\n\n`
+
+      promptText1 += `=============\n\nSilahkan pilih angka !`
+
+      var inputBarangUser = window.prompt(promptText1)  // 2
+      if (Number(inputBarangUser) === totalJenisBarang+1) {
+        break;
+      }
+
+      var pilihanBarang = barangs[inputBarangUser-1]; // barangs[1]
+
+      var hargaBarang = hargaBarangs[inputBarangUser-1];
+      var qtyBelanja = prompt(`Belanja ${pilihanBarang} berapa buah?`)
+      qtyBelanja = Number(qtyBelanja)
+
+      // if barang nya sudah ada, jangan di push
+      // else di push
+
+      if (userTrx.includes(pilihanBarang)) {
+        var indexToEdit = userTrx.indexOf(pilihanBarang)
+        userTrxQty[indexToEdit] += qtyBelanja
+      } else {
+        userTrx.push(pilihanBarang)
+        trxPrice.push(hargaBarang)
+        userTrxQty.push(qtyBelanja)
+      }
+
+
+    } while(true)
+
+    var textReceipt = 'Kamu membeli\n\n'
+    var grandTotal = 0;
+
+    var i = 0
+    while(i < userTrx.length) {
+      textReceipt+=`${i + 1}. ${userTrx[i]} sebanyak ${userTrxQty[i]} pcs x ${trxPrice[i]} = ${userTrxQty[i] * trxPrice[i]}\n`
+
+      grandTotal += trxPrice[i] * userTrxQty[i]
+      i++
+    }
+
+    textReceipt+= `\nTotal Belanja = Rp.${grandTotal}`
+    window.alert(textReceipt)
+  </script>
+</html>
