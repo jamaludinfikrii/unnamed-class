@@ -1,0 +1,84 @@
+<html>
+  <!--
+    Main Menu 1
+    --------
+    Selamat datang di aplikasi inventory, pilih menu
+    1. Lihat barang
+    2. Tambah barang
+    3. Update Stok
+    4. Delete barang
+    5. Exit
+
+    Menu 1 (Lihat barang)
+    --------------------
+    Alert
+    Barang di inventory
+    1. Ayam harga 10000 stok 10
+    2. Jeruk harga 7000 stok 100
+
+    Menu 2 (tambah barang)
+    ----------------------
+    Input
+    ------
+    Nama barang
+    Stok
+    Harga
+
+    Menu 3 (Update barang)
+    Input
+    -------
+    Alert
+    Barang di inventory
+    1. Ayam harga 10000 stok 10
+    2. Jeruk harga 7000 stok 100
+    Masukan barang yang mau di update stok nya
+    Mau update stok menjadi berapa?
+
+    Menu 4
+    Delete barang
+    Input
+    -------
+    Alert
+    Barang di inventory
+    1. Ayam harga 10000 stok 10
+    2. Jeruk harga 7000 stok 100
+    Barang mana yang mau di delete?
+   -->
+  <script>
+
+    var products = []
+    var prices = []
+    var stocks = []
+
+
+    do {
+      var inputMenu = prompt(`Selamat datang di aplika inventory, pilih menu\n\n1. Lihat barang\n2. Tambah barang\n3. Update Stok\n4. Delete barang\n5. Exit`)
+
+      if (inputMenu === '5') {
+        break;
+      }
+
+      if (inputMenu === '1') {
+        alert('menu lihat barang')
+        // show barang
+      } else if (inputMenu === '2') {
+        alert('menu tambah barang')
+        // tambah barang
+        // .push
+      } else if (inputMenu === '3') {
+        alert('menu update stock')
+        // update stock
+        // cari barang yang di update index nya berapa
+        // stocks[indexDicari] = stockBaru
+      } else if (inputMenu === '4') {
+        alert('menu delete stock')
+        // delete barang
+        // .splice
+      }
+
+
+    } while (true)
+
+
+  </script>
+</html>
