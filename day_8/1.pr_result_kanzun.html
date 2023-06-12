@@ -1,0 +1,146 @@
+<html>
+  <!--
+    Main Menu 1
+    --------
+    Selamat datang di aplikasi inventory, pilih menu
+    1. Lihat barang
+    2. Tambah barang
+    3. Update Stok
+    4. Delete barang
+    5. Exit
+
+    Menu 1 (Lihat barang)
+    --------------------
+    Alert
+    Barang di inventory
+    1. Ayam harga 10000 stok 10
+    2. Jeruk harga 7000 stok 100
+
+    Menu 2 (tambah barang)
+    ----------------------
+    Input
+    ------
+    Nama barang
+    Stok
+    Harga
+
+    Menu 3 (Update barang)
+    Input
+    -------
+    Alert
+    Barang di inventory
+    1. Ayam harga 10000 stok 10
+    2. Jeruk harga 7000 stok 100
+    Masukan barang yang mau di update stok nya
+    Mau update stok menjadi berapa?
+
+    Menu 4
+    Delete barang
+    Input
+    -------
+    Alert
+    Barang di inventory
+    1. Ayam harga 10000 stok 10
+    2. Jeruk harga 7000 stok 100
+    Barang mana yang mau di delete?
+
+
+    Tambah specs
+    - dikasih pengecekan nama product gak boleh sama
+
+
+    Pilih aplikasi
+    1. kasir
+    2. inventory
+    3. exit
+
+
+    1. munculin list product, terus tanya mau belanja apa?
+    2. kalau di kasir belanja dengan qty melebehi stok, itu error,
+    3. misal kasir udah selesai. itu kan muncul receipt, belanja apa aja, qty berapa total harga berapa?
+    4. setelah back ke aplikasi inventory, harusnya stock nya udah berkurang
+
+
+
+
+   -->
+  <script>
+    var products = [
+      "Buku",
+      "Pulpen",
+      "Tipe-X",
+      "Tas",
+      "Penggaris",
+      "Pensil",
+      "Spidol",
+      "Stabilo",
+      "Gunting",
+      "Staples",
+    ];
+    var prices = [
+      5000, 3000, 5000, 50000, 3000, 2000, 5000, 10000, 10000, 15000,
+    ];
+    var stocks = [200, 300, 50, 20, 100, 200, 200, 100, 100, 30];
+
+    do {
+      var inputMenu = prompt(
+        `Selamat datang di aplikasi inventory, pilih menu\n\n1. Lihat barang\n2. Tambah barang\n3. Update Stok\n4. Delete barang\n5. Exit`
+      );
+
+      if (inputMenu === "5") {
+        break;
+      }
+
+      if (inputMenu === "1") {
+        alert("Menu lihat barang");
+        // show barang
+        var DaftarBarang =
+          "Daftar barang yang tersedia:\n ==================== \n";
+        for (i = 0; i < products.length; i++)
+          DaftarBarang += `${i + 1}. ${products[i]}, harga satuan Rp. ${prices[i]}, jumlah stok ${stocks[i]} \n `;
+        DaftarBarang += "====================";
+        alert(DaftarBarang);
+      } else if (inputMenu === "2") {
+        alert("Menu tambah barang");
+        // tambah barang
+        var tambahBarang = prompt("Masukan nama barang yang mau ditambahkan!");
+        var tambahHarga = Number(prompt("Masukan harga barang"));
+        var tambahStok = Number(prompt("Masukan stok barang"));
+        // .push
+        products.push(tambahBarang);
+        prices.push(tambahHarga);
+        stocks.push(tambahStok);
+      } else if (inputMenu === "3") {
+        alert("Menu update stock");
+        // update stock
+        // cari barang yang di update index nya berapa
+        barangUpdate = prompt(
+          "Masukan nama barang yang ingin diupdate stoknya!"
+        );
+        var stockToupdate = products.indexOf(barangUpdate); // 0
+        var stockBaru = prompt(
+          "Masukan stok tambahan atau kurangan!\n(Masukan angka saja jika mau ditambah stoknya,\n dan masukan -(angka) jika ingin dikurangi stoknya)"
+        );
+        stockBaru = Number(stockBaru);
+        stocks[stockToupdate] += stockBaru;
+        console.log(stocks);
+        alert('update stock berhasil, sekarang product ' + products[indextoUpdate] + ' telah berubah menjadi ' + stocks[indextoUpdate])
+
+        // stocks[indexDicari] = stockBaru
+      } else if (inputMenu === "4") {
+        alert("Menu delete stock");
+        // delete barang
+        var deletBarang = prompt("Masukan nama barang yang ingin dihapus!");
+        console.log(deletBarang);
+        var indextoUpdate = products.indexOf(deletBarang);
+        console.log(indextoUpdate);
+        products.splice(indextoUpdate, 1);
+        prices.splice(indextoUpdate, 1);
+        stocks.splice(indextoUpdate, 1);
+
+        alert("delete barang berhasil")
+        // .splice
+      }
+    } while (true);
+  </script>
+</html>
