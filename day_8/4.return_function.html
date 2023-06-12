@@ -1,0 +1,37 @@
+<html>
+  <!--
+    1. function, itu bisa me return sesuatu
+    2. jadi, function itu, di dalamnya bisa
+      1. menjalankan sesuatu
+      2. menghasilkan sesuatu
+      3. menjalankan dan menghasilkan sesuatu
+
+    3. suatu code dijadikan function ada beberapa alasan
+      1. bisa re-usability
+      2. biar lebih readable
+  -->
+  <script>
+    // contoh function yang hanya menjalankan sesuatu
+    function penjumlahan(angka1, angka2) {
+      console.log(angka1 + angka2);
+    }
+    penjumlahan(10, 10);
+
+    var hasil = penjumlahan(20, 20);
+    console.log(hasil);
+
+    // contoh function yang menghasilkan sesuatu
+    function pembagian(angka1, angka2) {
+      return angka1 / angka2;
+    }
+
+    var hasilBagi = pembagian(10, 2);
+    console.log(hasilBagi);
+
+    function convertNumberToRupiah(number) {
+      var rupiah = "Rp. " + number;
+      return rupiah;
+    }
+
+  </script>
+</html>
