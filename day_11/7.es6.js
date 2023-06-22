@@ -46,3 +46,7 @@ var product = [
 for (pro of product) {
   console.log(pro.name + ' Rp. ' + pro.price)
 }
+
+
+// ============================== Other ===============
+// https://www.w3schools.com/js/js_es6.asp
