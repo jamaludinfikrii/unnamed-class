@@ -1,0 +1,95 @@
+<html>
+  <script>
+    class Product {
+      constructor(name, price, stock) {
+        this.name = name;
+        this.price = price;
+        this.stok = stock;
+      }
+
+      updateStock(newStock) {
+        this.stok = newStock
+      }
+
+      printProduct() {
+        return `${this.name} Rp. ${this.price}, stock = ${this.stok}`
+      }
+    }
+
+    var product = [
+      new Product("Buku", 5000, 200),
+      new Product("Pulpen", 3000, 300),
+      new Product('Tipe-x', 5000, 50),
+    ];
+
+    function showProducts(type, additionalText) {
+      var text = "";
+      for (var i = 0; i < product.length; i++) {
+        text += `${i + 1}. ${product[i].printProduct()}\n`;
+      }
+
+      if (additionalText) {
+        text += additionalText;
+      }
+
+      if (type === "alert") {
+        alert(text);
+      } else if (type === "prompt") {
+        var resultPrompt = prompt(text);
+        return resultPrompt;
+      }
+    }
+
+    function searchProductIndex(produtName) {
+      for (var i = 0; i < product.length; i++) {
+        if (product[i].name.toLowerCase() === produtName.toLowerCase()) {
+          return i;
+        }
+      }
+    }
+
+    do {
+      var inputMenu = prompt(
+        `Selamat datang di aplikasi inventory, pilih menu\n\n1. Lihat barang\n2. Tambah barang\n3. Update Stok\n4. Delete barang\n5. Exit`
+      );
+
+      if (inputMenu === "5") {
+        break;
+      }
+
+      if (inputMenu === "1") {
+        showProducts("alert");
+      } else if (inputMenu === "2") {
+        var newProduct = prompt("Masukan nama barang yang mau ditambahkan!");
+        var newPrice = Number(prompt("Masukan harga barang"));
+        var newStock = Number(prompt("Masukan stok barang"));
+
+        var newProductObj = new Product(newProduct, newPrice, newStock)
+        product.push(newProductObj);
+        alert("berhasil tambah product !!");
+        showProducts("alert");
+      } else if (inputMenu === "3") {
+        var productNameToUpdate = showProducts(
+          "prompt",
+          "\nMasukan nama product untuk di update !"
+        );
+        alert("Kamu akan mengupdate product " + productNameToUpdate);
+        var productIndexToUpdate = searchProductIndex(productNameToUpdate);
+
+        var newStock = prompt("Mau di update menjadi berapaa?");
+        product[productIndexToUpdate].updateStock(Number(newStock))
+        alert("berhasil update stock");
+        showProducts("alert");
+      } else if (inputMenu === "4") {
+        var productNameToDelete = showProducts(
+          "prompt",
+          "\nMasukan nama product yang ingin di DELETE !"
+        );
+        var productIndexToDelete = searchProductIndex(productNameToDelete);
+        product.splice(productIndexToDelete, 1);
+        alert("berhasil delete product !!");
+        showProducts("alert");
+      }
+    } while (true);
+  </script>
+</html>
