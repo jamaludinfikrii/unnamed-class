@@ -29,6 +29,24 @@
     <a href="http://www.google.com" target="_blank">Klik disini guys</a>
 
      <div></div>
-    <button class="btn-blue">Gabung Sekarang</button>
+    <button class="btn-blue" onclick="onGabungClick()">Gabung Sekarang</button>
   </body>
+
+  <script>
+    let isClicked = false
+    function onGabungClick() {
+      if (isClicked === false) {
+        const body = document.getElementsByTagName('body')[0]
+        const h1 = document.createElement("h1");
+        h1.appendChild(document.createTextNode("Hello World"))
+        body.appendChild(h1)
+        isClicked = true
+      } else {
+        const body = document.getElementsByTagName('body')[0]
+        body.removeChild(body.lastChild)
+        isClicked = false
+      }
+
+    }
+  </script>
 </html>
