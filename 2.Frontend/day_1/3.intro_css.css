@@ -1,0 +1,40 @@
+/*
+  CSS untuk styling kerangka
+
+  1. property css itu buanyaaak banged guys. jangan dihafal. kalau lupa liat di doc https://www.w3schools.com/cssref/index.php
+  2. Dalam ber css, perlu tau dua hal, selector & property
+  3. selector bisa banyaak, bisa dari tag, bisa dari class, dsb
+*/
+
+.text-red {
+  color: red;
+}
+
+.class-lain {
+  color: salmon;
+  background-color: black;
+  font-size: 50px;
+  text-align: center;
+  padding: 20px;
+}
+
+.paragraph {
+  font-size: 20px;
+  font-weight: 400;
+  color: lightgray;
+}
+
+img {
+  width: 361px;
+  height: 301px;
+}
+
+.btn-blue {
+  border: none;
+  display: inline-flex;
+  padding: 16px 32px;
+  align-items: flex-start;
+  border-radius: 84px;
+  background: #0065db;
+  color: white;
+}
