@@ -1,0 +1,13 @@
+/* h1, p {
+  display: inline;
+} */
+
+h1 {
+  border: 1px solid black;
+  padding-left: 20px;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
